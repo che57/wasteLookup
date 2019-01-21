@@ -1,7 +1,7 @@
 <div class="header">
   <h1>Toronto Waste Lookup</h1>
 </div>
-<app-search></app-search>
-<app-favourites></app-favourites>
+<app-search #resultList (updateLikes)="likeList.renderLikes()"></app-search>
+<app-favourites #likeList (updateResult)="resultList.cancelLike($event)"></app-favourites>
 
 <router-outlet></router-outlet>

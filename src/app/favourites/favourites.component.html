@@ -1,15 +1,14 @@
 <div class="wrap">
   <h1 class="green">Favourites</h1>
   <table>
-    <tr>
+    <tr *ngFor="let a of likeArr">
       <td class="rTitle">
-        <div>
-          <i class="fas fa-star green"></i>
-          <div>Blue Bin</div>
-        </div>
+        <ul style="padding: 0"><div>
+          <i class="fas fa-star green" #i id = '{{a.title}}' (click)="cancelLike(i.id)"></i>
+          <div>{{a.title}}</div>
+        </div></ul>
       </td>
-      <td class="rDescription" [innerHTML] = ''>
-        yayaya
+      <td class="rDescription" [innerHTML] = 'a.rBody'>
       </td>
     </tr>
   </table>

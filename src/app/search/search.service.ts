@@ -14,7 +14,6 @@ export class SearchService {
   getData() {
     this.http.get('../../assets/data/swm_waste_wizard_APR.json').subscribe((data) => {
       this.wData = data;
-      // this.searchData('takeout');
     });
   }
   searchData(keyword) {
