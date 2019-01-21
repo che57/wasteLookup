@@ -1,0 +1,21 @@
+<div class="wrap searchBar">
+  <input class="searchInput" #s (keyup.enter)="search(s.value)">
+  <button class="searchBtn" (click)="search(s.value)">
+    <i class="fas fa-search icon-flipped"></i>
+  </button>
+</div>
+<div class="wrap">
+  <table>
+    <tr *ngFor="let r of results">
+      <td class="rTitle">
+        <div>
+          <i class="fas fa-star green"></i>
+          <div>{{r.title}}</div>
+        </div>
+      </td>
+      <td class="rDescription" [innerHTML] = 'r.rBody'>
+        <!--<li>{{r.rBody}}</li>-->
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,57 @@
+.wrap {
+  margin: 22px auto;
+  width: 59%;
+}
+.searchBar {
+  display: flex;
+  justify-content: center;
+}
+.searchInput {
+  height: 50px;
+  padding-left: 10px;
+  width: 100%;
+}
+.searchBtn {
+  margin-left: 22px;
+  background-color: #23995C;
+  color: white;
+  border: none;
+  width: 56px;
+  height: 56px;
+  font-size: 34px;
+  box-shadow: 1px 1px 1px grey;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}  /*ref:https://stackoverflow.com/questions/18609819/how-to-flip-glyphicon-icon*/
+table {
+  width: 100%;
+}
+td {
+  vertical-align: top;
+}
+.rTitle {
+  width: 46%;
+}
+.rTitle div {
+  display: flex;
+}
+.green {
+  color: #23995C;
+  margin-right: 15px;
+}
+li {
+  counter-increment: foo;
+  display: table-row;
+}
+li::before {
+  content: "•";
+  display: table-cell;
+  text-align: right;
+  padding-right: 10px;
+}
