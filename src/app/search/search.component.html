@@ -1,21 +1,23 @@
-<div class="wrap searchBar">
-  <input class="searchInput" #s (keyup.enter)="search(s.value)" (keyup.backspace)="initInputBar(s.value)">
-  <button class="searchBtn" (click)="search(s.value)">
-    <i class="fas fa-search icon-flipped"></i>
-  </button>
-</div>
-<div class="wrap">
-  <h5 *ngIf="results.length == 0">Search for waste items!</h5>
-  <table>
-    <tr *ngFor="let r of results">
-      <td class="rTitle">
-        <div>
-          <i class="fas fa-star green"></i>
-          <div>{{r.title}}</div>
-        </div>
-      </td>
-      <td class="rDescription" [innerHTML] = 'r.rBody'>
-      </td>
-    </tr>
-  </table>
+<div class="bg-white">
+  <div class="wrap searchBar">
+    <input class="searchInput" #s (keyup.enter)="search(s.value)" (keyup.backspace)="initInputBar(s.value)">
+    <button class="searchBtn" (click)="search(s.value)">
+      <i class="fas fa-search icon-flipped"></i>
+    </button>
+  </div>
+  <div class="wrap">
+    <h5 *ngIf="results.length == 0">{{emptyDisplay}}</h5>
+    <table>
+      <tr *ngFor="let r of results">
+        <td class="rTitle">
+          <div>
+            <i class="fas fa-star" [class.green]="r.isLiked" [class.gray]="!r.isLiked"></i>
+            <div>{{r.title}}</div>
+          </div>
+        </td>
+        <td class="rDescription" [innerHTML] = 'r.rBody'>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

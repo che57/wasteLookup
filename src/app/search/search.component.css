@@ -41,9 +41,14 @@ td {
 .rTitle div {
   display: flex;
 }
+.green, .gray {
+  margin-right: 15px;
+}
 .green {
   color: #23995C;
-  margin-right: 15px;
+}
+.gray {
+  color: #AAAAAA;
 }
 li {
   counter-increment: foo;
@@ -56,7 +61,8 @@ li::before {
   padding-right: 10px;
 }
 
-.bg-green {
-  background-color: #F7FEFA;
+.bg-white {
+  background-color: white;
   width: 100%;
+  padding: 4px 0 22px 0;
 }

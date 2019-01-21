@@ -9,6 +9,7 @@ import {Resules} from '../resules';
 })
 export class SearchComponent implements OnInit {
   public results: Resules[];
+  public emptyDisplay = 'Search for waste items!';
   constructor(
     private searchService: SearchService
   ) {
@@ -17,6 +18,7 @@ export class SearchComponent implements OnInit {
   initInputBar(v) {
     if (v === '') {
       this.results = [];
+      this.emptyDisplay = 'Search for waste items!';
     }
   }
 
@@ -28,11 +30,19 @@ export class SearchComponent implements OnInit {
       tempR.title = x.title;
       x.body = x.body.replace(new RegExp('&lt;', 'g'), '<');
       x.body = x.body.replace(new RegExp('&amp;nbsp;', 'g'), ' ');
-      tempR.rBody = x.body.replace(new RegExp('&gt;', 'g'), '>');
-      console.log(tempR);
+      x.body = x.body.replace(new RegExp('&gt;', 'g'), '>');
+      if (x.body.indexOf('<li>') === -1) {
+        x.body = '<ul><li>' + x.body + '</li></ul>';
+      }
+      tempR.rBody = x.body;
       this.results.push(tempR);
     }
-    console.log(this.results);
+    if (this.results.length === 0) {
+      this.emptyDisplay = 'Sorry, there are no results with your search term.';
+    }
+  }
+  clickLike() {
+
   }
   ngOnInit() {
   }
