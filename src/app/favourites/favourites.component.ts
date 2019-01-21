@@ -7,7 +7,7 @@ import {Resules} from '../resules';
   styleUrls: ['../search/search.component.css']
 })
 export class FavouritesComponent implements OnInit {
-  private likeArr: Resules[];
+  public likeArr: Resules[];
   constructor() {
     this.likeArr = [];
     this.renderLikes();
