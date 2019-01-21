@@ -55,3 +55,8 @@ li::before {
   text-align: right;
   padding-right: 10px;
 }
+
+.bg-green {
+  background-color: #F7FEFA;
+  width: 100%;
+}

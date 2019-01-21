@@ -14,6 +14,11 @@ export class SearchComponent implements OnInit {
   ) {
     this.results = [];
   }
+  initInputBar(v) {
+    if (v === '') {
+      this.results = [];
+    }
+  }
 
   search(keyword) {
     this.results = [];

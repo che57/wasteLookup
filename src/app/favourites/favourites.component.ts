@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
-  styleUrls: ['./favourites.component.css']
+  styleUrls: ['../search/search.component.css']
 })
 export class FavouritesComponent implements OnInit {
 

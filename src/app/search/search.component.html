@@ -1,10 +1,11 @@
 <div class="wrap searchBar">
-  <input class="searchInput" #s (keyup.enter)="search(s.value)">
+  <input class="searchInput" #s (keyup.enter)="search(s.value)" (keyup.backspace)="initInputBar(s.value)">
   <button class="searchBtn" (click)="search(s.value)">
     <i class="fas fa-search icon-flipped"></i>
   </button>
 </div>
 <div class="wrap">
+  <h5 *ngIf="results.length == 0">Search for waste items!</h5>
   <table>
     <tr *ngFor="let r of results">
       <td class="rTitle">
@@ -14,7 +15,6 @@
         </div>
       </td>
       <td class="rDescription" [innerHTML] = 'r.rBody'>
-        <!--<li>{{r.rBody}}</li>-->
       </td>
     </tr>
   </table>
